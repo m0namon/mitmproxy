@@ -22,7 +22,7 @@ from mitmproxy.net import http
 from mitmproxy.utils import strutils
 from . import (
     auto, raw, hex, json, xml_html, wbxml, javascript, css,
-    urlencoded, multipart, image, query, protobuf, msgpack
+    urlencoded, multipart, image, query, protobuf, msgpack, mmtls
 )
 from .base import View, KEY_MAX, format_text, format_dict, TViewResult
 
@@ -177,6 +177,7 @@ add(image.ViewImage())
 add(query.ViewQuery())
 add(protobuf.ViewProtobuf())
 add(msgpack.ViewMsgPack())
+add(mmtls.ViewMMTLS())
 
 __all__ = [
     "View", "KEY_MAX", "format_text", "format_dict", "TViewResult",

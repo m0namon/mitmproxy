@@ -98,7 +98,6 @@ export class Request extends Component {
                         readonly={!isEdit}
                         onChange={headers => updateFlow({ request: { headers } })}
                     />
-
                     <hr/>
                     <ContentView
                         readonly={!isEdit}

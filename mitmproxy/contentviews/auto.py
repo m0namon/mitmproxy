@@ -9,7 +9,11 @@ class ViewAuto(base.View):
 
     def __call__(self, data, **metadata):
         headers = metadata.get("headers", {})
+        upgrade = headers.get("upgrade")
         ctype = headers.get("content-type")
+        if data and upgrade:
+          if upgrade == "mmtls":
+            return contentviews.get("MMTLS")(data, **metadata)
         if data and ctype:
             ct = http.parse_content_type(ctype) if ctype else None
             ct = "{}/{}".format(ct[0], ct[1])

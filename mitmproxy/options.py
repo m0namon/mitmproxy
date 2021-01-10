@@ -147,5 +147,11 @@ class Options(optmanager.OptManager):
             TLS key size for certificates and CA.
             """
         )
+        self.add_option(
+            "mmtls", bool, True,
+            """
+            Enable/disable MMTLS support. Enabled by default.
+            """
+        )
 
         self.update(**kwargs)
